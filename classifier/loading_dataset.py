@@ -1,9 +1,10 @@
 from torchvision import datasets, transforms
 import matplotlib
+
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-import seaborn as sns
+
 import numpy as np
 
 
@@ -24,9 +25,6 @@ def load_mnist():
 
     X_test = test_dataset.data.numpy()
     y_test = test_dataset.targets.numpy()
-
-    print(f"Dataset Train: x - {len(X_train)}, y - {len(y_train)}")
-    print(f"Dataset Test: x - {len(X_test)}, y - {len(y_test)}")
 
     return X_train, y_train, X_test, y_test
 
