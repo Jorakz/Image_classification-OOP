@@ -2,6 +2,7 @@ import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from interfaces import MnistClassifierInterface
 
+#Random Forest realization
 class MnistRFClassifier(MnistClassifierInterface):
     def __init__(self):
         self.model = RandomForestClassifier(n_estimators=100, random_state=42)

@@ -1,6 +1,6 @@
 import matplotlib
 
-matplotlib.use('TkAgg')
+matplotlib.use('Agg')
 
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -16,7 +16,7 @@ def plot_metrics(history, model_name):
       - model_name: string indicating the model name for the plot title.
     """
     epochs = range(1, len(history['train_loss']) + 1)
-    #plt.figure(figsize=(12, 5))
+    plt.figure(figsize=(12, 5))
 
     # Loss graph
     plt.subplot(1, 2, 1)
@@ -42,7 +42,7 @@ def plot_metrics(history, model_name):
 
 
     plt.show()
-    return 0
+
 
 def plot_confusion_matrix(y_true, y_pred, model_name):
     """
@@ -63,6 +63,6 @@ def plot_confusion_matrix(y_true, y_pred, model_name):
     plt.legend()
 
     plt.show()
-    return 0
+
 
  

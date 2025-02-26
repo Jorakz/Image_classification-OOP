@@ -6,7 +6,7 @@ from models.nn import MnistNNClassifier
 from models.cnn import MnistCNNClassifier
 # Import plotting functions from result_plot.py
 from result_plot import plot_metrics, plot_confusion_matrix
-from loading_dataset import load_mnist
+from loading_dataset import load_mnist, visualize_samples, plot_class_distribution
 from sklearn.metrics import classification_report
 
 
@@ -20,13 +20,15 @@ def evaluate_model(model, X_test, y_test, model_name="Model"):
 
 
 def main():
-    # Visualize the dataset by calling the main() function from analize_dataset.py
-    print("Visualizing MNIST dataset:")
     # Load MNIST dataset
-
-
-
     X_train, y_train, X_test, y_test = load_mnist()
+
+    # Visualize sample images from the training and test dataset
+    visualize_samples(X_train, y_train, dataset_name="Training")
+    visualize_samples(X_test, y_test, dataset_name="Test")
+    # Plot the combined class distribution for training and test datasets
+    plot_class_distribution(y_train, y_test)
+
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
     # --- Random Forest ---

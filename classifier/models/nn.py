@@ -4,7 +4,7 @@ import torch.optim as optim
 from torch.utils.data import DataLoader, TensorDataset
 import numpy as np
 from interfaces import MnistClassifierInterface
-
+# Feed-Forward Neural Network realization
 class FeedForwardNN(nn.Module):
     def __init__(self, input_dim=784, hidden_dim=512, output_dim=10):
         super(FeedForwardNN, self).__init__()
